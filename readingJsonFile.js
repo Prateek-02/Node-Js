@@ -1,14 +1,15 @@
 const fs = require("fs");
 
-// Synchrously
-try {
-    const data = fs.readFileSync('read.json', 'utf-8');
-    const parsedData = JSON.parse(data);
-    console.log(parsedData);
-} 
-catch (err) {
-    console.error("Error reading or parsing the file:", err);
-}
+// Parse Json file and print the data on console
+fs.readFile('read.json','utf-8',(err,data)=>{
+    if(err){
+        console.log("Error parsing the file: ",err);
+    }
+    else{
+        const z = JSON.parse(data);
+        console.log(z);
+    }
+})
 
 
 
@@ -28,12 +29,6 @@ fs.readFile('read.json', 'utf-8', (err,data) =>{
 })
 */
 
-
-fs.readFile('read.json','utf-8',(err,data) => {
-    if(err){
-        console.log("Error reading the file: "+err);
-    }
-    else{
-        console.log(data);
-    }
-})
+// reading Json file synchronously
+const b = fs.readFileSync('read.json');
+console.log(b.toString());

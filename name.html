@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name Prompt</title>
+</head>
+<body>
+    <form id="formName">
+        <label for="FirstName">Enter your First Name: </label>
+        <input type="text" name="FirstName" id="fname">
+        <br><br>
+        <label for="LastName">Enter your Last Name: </label>
+        <input type="text" name="LastName" id="lname">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.getElementById('formName').addEventListener('submit',function(event){
+            event.preventDefault();
+            const FirstName = document.getElementById('fname').value;
+            const LastName = document.getElementById('lname').value;
+
+            alert(`Hello ${FirstName} ${LastName}`);
+        })
+    </script>
+</body>
+</html>
